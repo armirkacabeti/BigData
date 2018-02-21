@@ -1,0 +1,61 @@
+---
+output:
+  pdf_document: default
+  html_document: default
+---
+---
+title: "hw1ArmirKaçabetiPart1.r"
+author: "Armir Kaçabeti"
+date: "21 Şubat 2018"
+output: html_document
+
+#Using Tidyverse Package
+```{r}
+library(tidyverse)  
+```
+
+#Set Working Directory
+```{r}
+setwd("C:/Users/Me/Desktop/BigData_HW")
+```
+
+#Read the File
+```{r}
+library(readr)
+UNdata_Export_20171026_130851047 <- read_csv ("C:/Users/Me/Desktop/BigData_HW/UNdata_Export_20171026_130851047.csv")
+```
+
+#Viewing the File
+```{r}
+#View(UNdata_Export_20171026_130851047)
+```
+
+#Using glimpse function
+```{r}
+glimpse(UNdata_Export_20171026_130851047)
+```
+
+#Checking the dimension of the data
+```{r}
+dim(UNdata_Export_20171026_130851047)
+```
+
+#Using ggplot function
+```{r}
+p1 <- ggplot(data = UNdata_Export_20171026_130851047, aes(x=Year, y=Rate))
+p1 + geom_bar(stat="identity")
+```
+
+#Filtering data for Albania
+```{r}
+filter1<- UNdata_Export_20171026_130851047 %>%
+  group_by(`Country or Area`) %>%
+  filter(`Country or Area`=="Albania") %>%  ggplot(aes(x=Year, y = Count)) + geom_bar(stat = "identity")
+filter1
+```
+
+
+
+
+
+
