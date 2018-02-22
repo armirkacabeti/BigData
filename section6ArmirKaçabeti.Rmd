@@ -1,0 +1,21 @@
+---
+title: "section6ArmirKaçabeti.r"
+author: "Armir Kaçabeti"
+date: "21 Şubat 2018"
+output: html_document
+---
+
+#6. Getting Data In and Out of R
+
+#6.2 Reading Data Files with read.table()
+```{r}
+data <- read.table("foo.txt")
+```
+
+#6.3 Reading in Larger Datasets with read.table
+```{r}
+initial <- read.table("foo.txt", nrows = 100)
+classes <- sapply(initial, class)
+tabAll <- read.table("foo.txt", colClasses = classes)
+```
+

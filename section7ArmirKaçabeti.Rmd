@@ -1,0 +1,29 @@
+---
+title: "section7ArmirKaçabeti.r"
+author: "Armir Kaçabeti"
+date: "February 21, 2018"
+output: html_document
+---
+
+#7. Using the readr Package
+```{r}
+library(readr)
+country <- read_csv("C:/Users/Me/Desktop/BigData_HW/UNdata_Export_20171026_130851047.csv")
+```
+
+```{r}
+country
+```
+
+```{r}
+country <- read_csv("C:/Users/Me/Desktop/BigData_HW/UNdata_Export_20171026_130851047.csv",col_types="cc")
+```
+ 
+ 
+```{r}
+logs <- read_csv("C:/Users/Me/Desktop/BigData_HW/UNdata_Export_20171026_130851047.csv", n_max = 10)
+
+```
+ 
+ 
+ 
